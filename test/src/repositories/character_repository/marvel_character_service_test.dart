@@ -50,5 +50,15 @@ void main() {
       expect(result, isA<MarvelApiRequestData>());
       expect(result.results.length, 1);
     });
+
+    test("Should not add 'startWith' parameter if search is empty", () async {
+      adapter.onGet("https://gateway.marvel.com/v1/public/characters", (server) {
+        final json = testingSampleData("json/characters.json");
+        server.reply(200, jsonDecode(json));
+      });
+
+      final result = await marvelCharacterService.searchCharacters(search: "");
+      expect(result, isA<MarvelApiRequestData>());
+    });
   });
 }
