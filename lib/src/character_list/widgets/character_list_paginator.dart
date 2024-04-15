@@ -38,6 +38,8 @@ class _CharacterListPaginatorState extends State<CharacterListPaginator> {
                 onPageChange: (int page) => onPageChanged(page),
                 initialPage: currentPage,
                 controller: _paginatorController,
+                showNextButton: false,
+                showPrevButton: false,
               ),
             ),
           );

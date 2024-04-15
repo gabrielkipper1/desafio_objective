@@ -19,11 +19,14 @@ class _CharacterListSearchBarState extends State<CharacterListSearchBar> {
       textDirection: TextDirection.ltr,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: SearchBar(
-          key: const Key("search_bar"),
-          controller: _searchTextController,
-          onChanged: (value) =>
-              Provider.of<CharacterListBloc>(context, listen: false).add(SearchCharactersEvent(query: value, limit: 4, offset: 0)),
+        child: SizedBox(
+          width: 500,
+          child: SearchBar(
+            key: const Key("search_bar"),
+            controller: _searchTextController,
+            onChanged: (value) =>
+                Provider.of<CharacterListBloc>(context, listen: false).add(SearchCharactersEvent(query: value, limit: 4, offset: 0)),
+          ),
         ),
       ),
     );
