@@ -30,16 +30,6 @@ void main() {
       expect(service, isA<MarvelCharacterService>());
     });
 
-    test("Should return a MarvelApiRequestData", () async {
-      adapter.onGet("https://gateway.marvel.com/v1/public/characters", (server) {
-        final json = testingSampleData("json/characters.json");
-        server.reply(200, jsonDecode(json));
-      });
-
-      final result = await marvelCharacterService.getCharacters();
-      expect(result, isA<MarvelApiRequestData>());
-    });
-
     test("Should return a MarvelApiRequestData with search", () async {
       adapter.onGet("https://gateway.marvel.com/v1/public/characters", (server) {
         final json = testingSampleData("json/character_search.json");

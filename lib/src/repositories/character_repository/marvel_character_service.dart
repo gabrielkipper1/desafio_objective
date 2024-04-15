@@ -14,22 +14,13 @@ class MarvelCharacterService implements CharacterRepository {
   }
 
   @override
-  Future<MarvelApiRequestData<Character>> getCharacters({int? offset, int? limit}) async {
-    try {
-      final result = await _client.get(baseUrl);
-      return MarvelApiRequestData.fromJson(result.data["data"], Character.fromJson);
-    } catch (e) {
-      rethrow;
-    }
-  }
-
-  @override
   Future<MarvelApiRequestData<Character>> searchCharacters({String? search, int? offset, int? limit}) async {
     try {
       Map<String, dynamic> queryParameters = {};
+
       if (search != null && search.isNotEmpty) queryParameters['nameStartsWith'] = search;
-      if (offset != null) queryParameters['offset'] = offset;
-      if (limit != null) queryParameters['limit'] = limit;
+      queryParameters['offset'] = offset ?? 0;
+      queryParameters['limit'] = limit ?? 4;
 
       final result = await _client.get(baseUrl, queryParameters: queryParameters);
       return MarvelApiRequestData.fromJson(result.data['data'], Character.fromJson);
