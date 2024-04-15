@@ -28,14 +28,17 @@ class _CharacterListPaginatorState extends State<CharacterListPaginator> {
           int currentPage = max((state.characters.offset / 4).ceil(), 0);
           int totalPages = max((state.characters.total / 4).ceil(), 1);
 
-          return SizedBox(
-            width: 600,
-            child: NumberPaginator(
-              key: const Key("paginator"),
-              numberPages: totalPages,
-              onPageChange: (int page) => onPageChanged(page),
-              initialPage: currentPage,
-              controller: _paginatorController,
+          return Align(
+            alignment: Alignment.bottomCenter,
+            child: SizedBox(
+              width: 600,
+              child: NumberPaginator(
+                key: const Key("paginator"),
+                numberPages: totalPages,
+                onPageChange: (int page) => onPageChanged(page),
+                initialPage: currentPage,
+                controller: _paginatorController,
+              ),
             ),
           );
         } else {
