@@ -9,6 +9,7 @@ import 'package:desafio_objective/src/repositories/http_client/dio_http.dart';
 import 'package:desafio_objective/src/repositories/http_client/http_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class CharacterListPage extends StatefulWidget {
   const CharacterListPage({super.key});
@@ -18,14 +19,11 @@ class CharacterListPage extends StatefulWidget {
 }
 
 class _CharacterListPageState extends State<CharacterListPage> {
-  final HttpRepository http = DioHttp(interceptors: [MarvelAuthInterceptorDio()]);
-  late CharacterRepository characterRepository;
   late CharacterListBloc _bloc;
 
   @override
   void initState() {
-    characterRepository = MarvelCharacterService(httpClient: http);
-    _bloc = CharacterListBloc(characterRepository: characterRepository);
+    _bloc = CharacterListBloc(characterRepository: Modular.get<CharacterRepository>());
     super.initState();
   }
 
