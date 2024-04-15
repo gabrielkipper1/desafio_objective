@@ -43,9 +43,17 @@ dependencies:
   http_interceptor: ^2.0.0-beta.8
   crypto: ^3.0.3
   http_mock_adapter: ^0.6.1
+  bloc: ^8.1.4
+  provider: ^6.1.2
+  number_paginator: ^0.4.1
+  shimmer: ^3.0.0
+  responsive_framework: ^1.4.0
+  network_image_mock: ^2.1.1
 
 dev_dependencies:
   flutter_test:
+    sdk: flutter
+  integration_test: 
     sdk: flutter
 
   # The "flutter_lints" package below contains a set of recommended lints to

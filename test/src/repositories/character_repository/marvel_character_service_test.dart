@@ -30,16 +30,6 @@ void main() {
       expect(service, isA<MarvelCharacterService>());
     });
 
-    test("Should return a MarvelApiRequestData", () async {
-      adapter.onGet("https://gateway.marvel.com/v1/public/characters", (server) {
-        final json = testingSampleData("json/characters.json");
-        server.reply(200, jsonDecode(json));
-      });
-
-      final result = await marvelCharacterService.getCharacters();
-      expect(result, isA<MarvelApiRequestData>());
-    });
-
     test("Should return a MarvelApiRequestData with search", () async {
       adapter.onGet("https://gateway.marvel.com/v1/public/characters", (server) {
         final json = testingSampleData("json/character_search.json");
@@ -49,6 +39,16 @@ void main() {
       final result = await marvelCharacterService.searchCharacters(search: "search_term");
       expect(result, isA<MarvelApiRequestData>());
       expect(result.results.length, 1);
+    });
+
+    test("Should not add 'startWith' parameter if search is empty", () async {
+      adapter.onGet("https://gateway.marvel.com/v1/public/characters", (server) {
+        final json = testingSampleData("json/characters.json");
+        server.reply(200, jsonDecode(json));
+      });
+
+      final result = await marvelCharacterService.searchCharacters(search: "");
+      expect(result, isA<MarvelApiRequestData>());
     });
   });
 }

@@ -14,7 +14,7 @@ final class MarvelApiRequestData<T> {
   });
 
   factory MarvelApiRequestData.fromJson(Map<String, dynamic> json, T Function(Map<String, dynamic>) fromJson) {
-    return MarvelApiRequestData(
+    return MarvelApiRequestData<T>(
       offset: json['offset'],
       limit: json['limit'],
       total: json['total'],
