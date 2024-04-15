@@ -23,9 +23,16 @@ class CharacterListBloc extends Bloc<CharacterListEvent, CharacterListState> {
   }
 
   Future searchForCharacters(SearchCharactersEvent event, Emitter<CharacterListState> emit) async {
-    emit(const CharacterListLoading());
     try {
+      emit(const CharacterListLoading());
+
       final requestData = await searchCharactersUseCase.searchCharacters(query: event.query, offset: event.offset, limit: event.limit);
+
+      if (requestData.results.isEmpty) {
+        emit(CharacterListEmptyState());
+        return;
+      }
+
       emit(CharacterListLoaded(requestData));
     } catch (e) {
       emit(CharacterListError(e.toString()));
@@ -33,13 +40,14 @@ class CharacterListBloc extends Bloc<CharacterListEvent, CharacterListState> {
   }
 
   Future changePage(ChangePageEvent event, Emitter<CharacterListState> emit) async {
-    emit(CharacterListPageChangedRequested(page: event.page));
     try {
-      final requestData = await searchCharactersUseCase.searchCharacters(
-        query: event.query,
-        offset: (event.page * event.limit),
+      emit(CharacterListPageChangedRequested(page: event.page));
+
+      final requestData = await searchCharactersUseCase.changePage(
+        page: event.page,
         limit: event.limit,
       );
+
       emit(CharacterListLoaded(requestData));
     } catch (e) {
       emit(CharacterListError(e.toString()));

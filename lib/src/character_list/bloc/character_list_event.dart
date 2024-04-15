@@ -22,6 +22,6 @@ class SearchCharactersEvent extends CharacterListEvent {
 class ChangePageEvent extends CharacterListEvent {
   final int page;
   final int limit;
-  final String query;
-  const ChangePageEvent({required this.page, required this.limit, required this.query});
+  // final String query;
+  const ChangePageEvent({required this.page, required this.limit});
 }

@@ -11,7 +11,7 @@ main() {
     });
 
     test("Should be a subclass of Equatable and props list be empty", () {
-      var event = const ChangePageEvent(page: 1, limit: 4, query: "Spider");
+      var event = const ChangePageEvent(page: 1, limit: 4);
       expect(event, isA<Equatable>());
       expect(event.props, isEmpty);
     });

@@ -27,3 +27,5 @@ final class CharacterListPageChangedRequested extends CharacterListState {
   final int page;
   const CharacterListPageChangedRequested({required this.page});
 }
+
+final class CharacterListEmptyState extends CharacterListState {}
