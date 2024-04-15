@@ -19,7 +19,8 @@ class _CharacterListPaginatorState extends State<CharacterListPaginator> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CharacterListBloc, CharacterListState>(
-      buildWhen: (previous, current) => previous is CharacterListLoaded || current is CharacterListLoading,
+      buildWhen: (previous, current) =>
+          (current is CharacterListLoading && current is CharacterListLoaded) || current is CharacterListLoaded,
       builder: (context, state) {
         if (state is CharacterListLoaded) {
           if (state.characters.results.isEmpty) return const SizedBox();
