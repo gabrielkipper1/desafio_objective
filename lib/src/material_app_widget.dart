@@ -1,5 +1,5 @@
-import 'package:desafio_objective/src/character_list/pages/character_list_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class MaterialAppWidget extends StatelessWidget {
@@ -7,7 +7,9 @@ class MaterialAppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    Modular.setInitialRoute('/');
+
+    return MaterialApp.router(
       title: 'Marvel Characters',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
@@ -20,7 +22,8 @@ class MaterialAppWidget extends StatelessWidget {
         ],
         child: child!,
       ),
-      home: const CharacterListPage(),
+      routerConfig: Modular.routerConfig,
+      // home: const CharacterListPage(),
     );
   }
 }
