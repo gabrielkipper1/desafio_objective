@@ -21,9 +21,17 @@ class _CharacterListSearchBarState extends State<CharacterListSearchBar> {
         padding: const EdgeInsets.all(8.0),
         child: SizedBox(
           width: 500,
-          child: SearchBar(
+          child: TextFormField(
             key: const Key("search_bar"),
             controller: _searchTextController,
+            decoration: InputDecoration(
+              focusColor: Theme.of(context).primaryColor,
+              hintText: "Nome do personagem",
+              border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+              labelStyle: TextStyle(color: Theme.of(context).colorScheme.primary),
+              hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary),
+              prefixIcon: Icon(Icons.search, color: Theme.of(context).colorScheme.primary),
+            ),
             onChanged: (value) =>
                 Provider.of<CharacterListBloc>(context, listen: false).add(SearchCharactersEvent(query: value, limit: 4, offset: 0)),
           ),
