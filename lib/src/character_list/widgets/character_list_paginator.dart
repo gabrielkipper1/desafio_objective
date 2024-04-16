@@ -50,6 +50,10 @@ class _CharacterListPaginatorState extends State<CharacterListPaginator> {
   }
 
   void onPageChanged(int page) {
+    if (context.mounted && page == currentPage) {
+      return;
+    }
+
     BlocProvider.of<CharacterListBloc>(context).add(ChangePageEvent(page: page, limit: 4));
     setState(() {
       currentPage = page;
@@ -57,15 +61,19 @@ class _CharacterListPaginatorState extends State<CharacterListPaginator> {
   }
 
   stateListener(BuildContext context, CharacterListState? state) {
+    if (!mounted && context.mounted) {
+      return;
+    }
+
     if (state is CharacterListLoaded) {
       final newPage = (state.characters.offset / 4).ceil();
       final newTotalPage = (state.characters.total / 4).ceil();
 
       if (newPage != currentPage || newTotalPage != totalPages) {
         setState(() {
+          _paginatorController.currentPage = newPage;
           currentPage = newPage;
           totalPages = newTotalPage;
-          _paginatorController.currentPage = newPage;
         });
       }
     }
