@@ -1,6 +1,6 @@
 import 'package:desafio_objective/src/app_module.dart';
-import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_tile/character_list_tile_builder.dart';
-import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/chracter_list_states/character_list_empty_widget.dart';
+import 'package:desafio_objective/src/features/character_list/widgets/character_list_widgets/character_list_tile/character_list_tile_builder.dart';
+import 'package:desafio_objective/src/features/character_list/widgets/character_list_widgets/chracter_list_states/character_list_empty_widget.dart';
 import 'package:desafio_objective/src/material_app_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';

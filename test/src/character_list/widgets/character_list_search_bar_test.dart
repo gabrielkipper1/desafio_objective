@@ -1,5 +1,5 @@
-import 'package:desafio_objective/src/character_list/bloc/character_list_bloc.dart';
-import 'package:desafio_objective/src/character_list/widgets/character_list_search_bar.dart';
+import 'package:desafio_objective/src/features/character_list/bloc/character_list_bloc.dart';
+import 'package:desafio_objective/src/features/character_list/widgets/character_list_search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';

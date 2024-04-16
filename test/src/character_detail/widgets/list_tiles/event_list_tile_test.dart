@@ -1,4 +1,4 @@
-import 'package:desafio_objective/src/character_detail/widgets/list_tiles/event_list_tile.dart';
+import 'package:desafio_objective/src/features/character_detail/widgets/list_tiles/event_list_tile.dart';
 import 'package:desafio_objective/src/entities/event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

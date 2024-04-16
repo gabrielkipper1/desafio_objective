@@ -1,6 +1,6 @@
-import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_tile/landscape_tile_widgets/character_list_tile_event_list.dart';
-import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_tile/character_name_photo_widget.dart';
-import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_tile/landscape_tile_widgets/character_list_tile_series_list.dart';
+import 'package:desafio_objective/src/features/character_list/widgets/character_list_widgets/character_list_tile/landscape_tile_widgets/character_list_tile_event_list.dart';
+import 'package:desafio_objective/src/features/character_list/widgets/character_list_widgets/character_list_tile/character_name_photo_widget.dart';
+import 'package:desafio_objective/src/features/character_list/widgets/character_list_widgets/character_list_tile/landscape_tile_widgets/character_list_tile_series_list.dart';
 import 'package:desafio_objective/src/entities/character.dart';
 import 'package:flutter/material.dart';
 

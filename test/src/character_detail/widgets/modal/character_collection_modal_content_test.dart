@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:desafio_objective/src/character_detail/widgets/list_tiles/comics_list_tile.dart';
-import 'package:desafio_objective/src/character_detail/widgets/modal/character_collection_modal_content.dart';
+import 'package:desafio_objective/src/features/character_detail/widgets/list_tiles/comics_list_tile.dart';
+import 'package:desafio_objective/src/features/character_detail/widgets/modal/character_collection_modal_content.dart';
 import 'package:desafio_objective/src/entities/character.dart';
 import 'package:desafio_objective/src/entities/comic.dart';
 import 'package:desafio_objective/src/entities/generic/marvel_api_request_data.dart';

@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:desafio_objective/src/character_list/use_cases/search_characters_use_case.dart';
+import 'package:desafio_objective/src/features/character_list/use_cases/search_characters_use_case.dart';
 import 'package:desafio_objective/src/entities/character.dart';
 import 'package:desafio_objective/src/entities/generic/marvel_api_request_data.dart';
 import 'package:desafio_objective/src/repositories/character_repository/character_repository.dart';

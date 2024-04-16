@@ -1,4 +1,4 @@
-import 'package:desafio_objective/src/character_list/bloc/character_list_bloc.dart';
+import 'package:desafio_objective/src/features/character_list/bloc/character_list_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

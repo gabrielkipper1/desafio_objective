@@ -1,4 +1,4 @@
-import 'package:desafio_objective/src/character_detail/widgets/list_tiles/url_list_tile.dart';
+import 'package:desafio_objective/src/features/character_detail/widgets/list_tiles/url_list_tile.dart';
 import 'package:desafio_objective/src/entities/marvel_url.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

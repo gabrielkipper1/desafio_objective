@@ -1,4 +1,4 @@
-import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_tile/landscape_tile_widgets/character_list_tile_event_list.dart';
+import 'package:desafio_objective/src/features/character_list/widgets/character_list_widgets/character_list_tile/landscape_tile_widgets/character_list_tile_event_list.dart';
 import 'package:desafio_objective/src/entities/event.dart';
 import 'package:desafio_objective/src/entities/generic/marvel_api_collection_data.dart';
 import 'package:flutter/widgets.dart';

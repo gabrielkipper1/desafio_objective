@@ -1,5 +1,5 @@
-import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_header/character_list_header_landscape.dart';
-import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_header/character_list_header_portrait.dart';
+import 'package:desafio_objective/src/features/character_list/widgets/character_list_widgets/character_list_header/character_list_header_landscape.dart';
+import 'package:desafio_objective/src/features/character_list/widgets/character_list_widgets/character_list_header/character_list_header_portrait.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 

@@ -1,4 +1,4 @@
-import 'package:desafio_objective/src/character_list/widgets/app_bar/change_theme_button.dart';
+import 'package:desafio_objective/src/features/character_list/widgets/app_bar/change_theme_button.dart';
 import 'package:flutter/material.dart';
 
 class PortraitAppBar extends StatelessWidget {

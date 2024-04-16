@@ -1,9 +1,9 @@
-import 'package:desafio_objective/src/character_list/bloc/character_list_bloc.dart';
-import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/chracter_list_states/character_list_empty_widget.dart';
-import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/chracter_list_states/character_list_error_widget.dart';
-import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/chracter_list_states/character_list_initial_message_widget.dart';
-import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/chracter_list_states/character_list_loading_widget.dart';
-import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_view.dart';
+import 'package:desafio_objective/src/features/character_list/bloc/character_list_bloc.dart';
+import 'package:desafio_objective/src/features/character_list/widgets/character_list_widgets/chracter_list_states/character_list_empty_widget.dart';
+import 'package:desafio_objective/src/features/character_list/widgets/character_list_widgets/chracter_list_states/character_list_error_widget.dart';
+import 'package:desafio_objective/src/features/character_list/widgets/character_list_widgets/chracter_list_states/character_list_initial_message_widget.dart';
+import 'package:desafio_objective/src/features/character_list/widgets/character_list_widgets/chracter_list_states/character_list_loading_widget.dart';
+import 'package:desafio_objective/src/features/character_list/widgets/character_list_widgets/character_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

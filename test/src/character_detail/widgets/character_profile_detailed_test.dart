@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:desafio_objective/src/character_detail/widgets/character_profile_detailed.dart';
+import 'package:desafio_objective/src/features/character_detail/widgets/character_profile_detailed.dart';
 import 'package:desafio_objective/src/entities/character.dart';
 import 'package:desafio_objective/src/entities/generic/marvel_api_request_data.dart';
 import 'package:flutter/material.dart';

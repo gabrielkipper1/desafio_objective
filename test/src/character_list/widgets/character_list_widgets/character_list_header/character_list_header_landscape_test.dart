@@ -1,4 +1,4 @@
-import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_header/character_list_header_landscape.dart';
+import 'package:desafio_objective/src/features/character_list/widgets/character_list_widgets/character_list_header/character_list_header_landscape.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 

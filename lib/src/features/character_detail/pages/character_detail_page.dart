@@ -1,9 +1,9 @@
-import 'package:desafio_objective/src/character_detail/widgets/character_url_list.dart';
-import 'package:desafio_objective/src/character_detail/widgets/list_tiles/story_list_tile.dart';
-import 'package:desafio_objective/src/character_detail/widgets/modal/character_collection_modal_content.dart';
-import 'package:desafio_objective/src/character_detail/widgets/character_profile_detailed.dart';
-import 'package:desafio_objective/src/character_detail/widgets/list_tiles/comics_list_tile.dart';
-import 'package:desafio_objective/src/character_detail/widgets/list_tiles/serie_list_tile.dart';
+import 'package:desafio_objective/src/features/character_detail/widgets/character_url_list.dart';
+import 'package:desafio_objective/src/features/character_detail/widgets/list_tiles/story_list_tile.dart';
+import 'package:desafio_objective/src/features/character_detail/widgets/modal/character_collection_modal_content.dart';
+import 'package:desafio_objective/src/features/character_detail/widgets/character_profile_detailed.dart';
+import 'package:desafio_objective/src/features/character_detail/widgets/list_tiles/comics_list_tile.dart';
+import 'package:desafio_objective/src/features/character_detail/widgets/list_tiles/serie_list_tile.dart';
 import 'package:desafio_objective/src/entities/character.dart';
 import 'package:desafio_objective/src/entities/comic.dart';
 import 'package:desafio_objective/src/entities/event.dart';

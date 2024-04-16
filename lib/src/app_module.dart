@@ -1,5 +1,5 @@
-import 'package:desafio_objective/src/character_detail/pages/character_detail_page.dart';
-import 'package:desafio_objective/src/character_list/pages/character_list_page.dart';
+import 'package:desafio_objective/src/features/character_detail/pages/character_detail_page.dart';
+import 'package:desafio_objective/src/features/character_list/pages/character_list_page.dart';
 import 'package:desafio_objective/src/interceptors/dio/marvel_auth_interceptor_dio.dart';
 import 'package:desafio_objective/src/repositories/character_repository/character_repository.dart';
 import 'package:desafio_objective/src/repositories/character_repository/marvel_character_service.dart';

@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:bloc_test/bloc_test.dart';
-import 'package:desafio_objective/src/character_list/bloc/character_list_bloc.dart';
-import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_builder.dart';
+import 'package:desafio_objective/src/features/character_list/bloc/character_list_bloc.dart';
+import 'package:desafio_objective/src/features/character_list/widgets/character_list_widgets/character_list_builder.dart';
 import 'package:desafio_objective/src/entities/character.dart';
 import 'package:desafio_objective/src/entities/generic/marvel_api_request_data.dart';
 import 'package:desafio_objective/src/repositories/character_repository/character_repository.dart';
