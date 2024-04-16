@@ -1,12 +1,18 @@
+import 'package:desafio_objective/src/app_module.dart';
 import 'package:desafio_objective/src/character_list/pages/character_list_page.dart';
 import 'package:desafio_objective/src/character_list/widgets/character_list_paginator.dart';
 import 'package:desafio_objective/src/character_list/widgets/character_list_search_bar.dart';
 import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_builder.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group("Character List Page", () {
+    setUp(() {
+      Modular.bindModule(AppModule());
+    });
+
     testWidgets("Should have a search bar in the character list page and it must be of type CharacterListSearchBar", (tester) async {
       await tester.pumpWidget(const MaterialApp(home: CharacterListPage()));
       var searchBarWidget = find.byType(CharacterListSearchBar);
