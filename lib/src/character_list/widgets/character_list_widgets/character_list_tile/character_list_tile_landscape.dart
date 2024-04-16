@@ -14,35 +14,32 @@ class CharacterListTileLandscapeWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Directionality(
         textDirection: TextDirection.ltr,
-        child: InkWell(
-          onTap: () => Navigator.of(context).pushNamed("/character_detail", arguments: character),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              flex: 1,
+              key: const Key("flex_profile"),
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: CharacterProfileWidget(character: character),
+              ),
+            ),
+            Expanded(
                 flex: 1,
-                key: const Key("flex_profile"),
+                key: const Key("flex_series"),
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: CharacterProfileWidget(character: character),
-                ),
-              ),
-              Expanded(
-                  flex: 1,
-                  key: const Key("flex_series"),
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: CharacterListTileSerieList(series: character.series),
-                  )),
-              Expanded(
-                  flex: 2,
-                  key: const Key("flex_events"),
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: CharacterListTileEventList(events: character.events),
-                  )),
-            ],
-          ),
+                  child: CharacterListTileSerieList(series: character.series),
+                )),
+            Expanded(
+                flex: 2,
+                key: const Key("flex_events"),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: CharacterListTileEventList(events: character.events),
+                )),
+          ],
         ),
       ),
     );
