@@ -1,10 +1,9 @@
 import 'package:desafio_objective/src/entities/character.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 
-class CharacterProfileWidget extends StatelessWidget {
+class CharacterNameAndPhotoWidget extends StatelessWidget {
   final Character character;
-  const CharacterProfileWidget({super.key, required this.character});
+  const CharacterNameAndPhotoWidget({super.key, required this.character});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +12,6 @@ class CharacterProfileWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0),
         child: ListTile(
-          onTap: () => Modular.to.pushNamed("/character_detail", arguments: character),
           title: Text(
             character.name,
             key: const Key("character_name"),

@@ -19,7 +19,7 @@ void main() {
       character = MarvelApiRequestData.fromJson(json, (json) => Character.fromJson(json)).results.first;
     });
 
-    testWidgets("Should show the character collection modal content", (tester) async {
+    testWidgets("Should show the correct character counter ", (tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: CharacterCollectionModalContent<Comic>(

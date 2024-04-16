@@ -8,13 +8,9 @@ class CharacterListLoadingWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
       key: const Key("loading_shimmer"),
-      baseColor: Colors.white,
+      baseColor: Theme.of(context).scaffoldBackgroundColor,
       highlightColor: const Color.fromRGBO(206, 206, 206, 0.301),
-      child: Container(
-        height: 100,
-        width: double.infinity,
-        color: Colors.red,
-      ),
+      child: Container(height: 100, width: double.infinity, color: Theme.of(context).primaryColor),
     );
   }
 }

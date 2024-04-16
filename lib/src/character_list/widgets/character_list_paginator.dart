@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:desafio_objective/src/character_list/bloc/character_list_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,8 +5,7 @@ import 'package:number_paginator/number_paginator.dart';
 import 'package:provider/provider.dart';
 
 class CharacterListPaginator extends StatefulWidget {
-  final Function(int)? onPageChanged;
-  const CharacterListPaginator({this.onPageChanged, super.key});
+  const CharacterListPaginator({super.key});
 
   @override
   State<CharacterListPaginator> createState() => _CharacterListPaginatorState();
@@ -15,46 +13,68 @@ class CharacterListPaginator extends StatefulWidget {
 
 class _CharacterListPaginatorState extends State<CharacterListPaginator> {
   final NumberPaginatorController _paginatorController = NumberPaginatorController();
+  int totalPages = 0;
+  int currentPage = 0;
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CharacterListBloc, CharacterListState>(
-      buildWhen: (previous, current) =>
-          (current is CharacterListLoading && current is CharacterListLoaded) || current is CharacterListLoaded,
-      builder: (context, state) {
-        if (state is CharacterListLoaded) {
-          if (state.characters.results.isEmpty) return const SizedBox();
-
-          int currentPage = max((state.characters.offset / 4).ceil(), 0);
-          int totalPages = max((state.characters.total / 4).ceil(), 1);
-
-          return Align(
-            alignment: Alignment.bottomCenter,
-            child: SizedBox(
-              width: 600,
-              child: NumberPaginator(
-                key: const Key("paginator"),
-                numberPages: totalPages,
-                onPageChange: (int page) => onPageChanged(page),
-                initialPage: currentPage,
-                controller: _paginatorController,
-                showNextButton: false,
-                showPrevButton: false,
+    return BlocListener<CharacterListBloc, CharacterListState>(
+      bloc: Provider.of<CharacterListBloc>(context, listen: false),
+      listener: (context, state) => stateListener(context, state),
+      child: Builder(
+        builder: (context) {
+          if (totalPages == 0) {
+            return const SizedBox();
+          }
+          return Padding(
+            padding: const EdgeInsets.only(left: 30.0, right: 30.0, bottom: 24.0, top: 18.0),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: SizedBox(
+                width: 600,
+                child: NumberPaginator(
+                  key: const Key("paginator"),
+                  numberPages: totalPages,
+                  onPageChange: (int page) => onPageChanged(page),
+                  initialPage: currentPage,
+                  controller: _paginatorController,
+                  showNextButton: false,
+                  showPrevButton: false,
+                ),
               ),
             ),
           );
-        } else {
-          return const SizedBox();
-        }
-      },
+        },
+      ),
     );
   }
 
   void onPageChanged(int page) {
-    if (!mounted) return;
-    setState(() {});
-    Provider.of<CharacterListBloc>(context, listen: false).add(ChangePageEvent(page: page, limit: 4));
+    BlocProvider.of<CharacterListBloc>(context).add(ChangePageEvent(page: page, limit: 4));
+    setState(() {
+      currentPage = page;
+    });
+  }
 
-    // widget.onPageChanged?.call(page);
+  stateListener(BuildContext context, CharacterListState? state) {
+    if (state is CharacterListLoaded) {
+      final newPage = (state.characters.offset / 4).ceil();
+      final newTotalPage = (state.characters.total / 4).ceil();
+
+      if (newPage != currentPage || newTotalPage != totalPages) {
+        setState(() {
+          currentPage = newPage;
+          totalPages = newTotalPage;
+          _paginatorController.currentPage = newPage;
+        });
+      }
+    }
+
+    if (state is CharacterListError || state is CharacterListEmptyState) {
+      setState(() {
+        currentPage = 0;
+        totalPages = 0;
+      });
+    }
   }
 }
