@@ -15,7 +15,7 @@ class CharacterListHeaderLandscape extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 5.0),
               child: Container(
                   height: 30,
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).colorScheme.primary,
                   key: const Key("list_header_name"),
                   child: Align(
                       alignment: Alignment.centerLeft,
@@ -32,7 +32,7 @@ class CharacterListHeaderLandscape extends StatelessWidget {
               padding: const EdgeInsets.all(5.0),
               child: Container(
                 height: 30,
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).colorScheme.primary,
                 key: const Key("list_header_serie"),
                 child: Align(
                   alignment: Alignment.centerLeft,
