@@ -1,9 +1,9 @@
 import 'package:desafio_objective/src/entities/character.dart';
 import 'package:flutter/material.dart';
 
-class CharacterProfileWidget extends StatelessWidget {
+class CharacterNameAndPhotoWidget extends StatelessWidget {
   final Character character;
-  const CharacterProfileWidget({super.key, required this.character});
+  const CharacterNameAndPhotoWidget({super.key, required this.character});
 
   @override
   Widget build(BuildContext context) {

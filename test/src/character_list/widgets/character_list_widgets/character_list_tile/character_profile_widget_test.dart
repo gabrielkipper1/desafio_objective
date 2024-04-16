@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_tile/character_profile_widget.dart';
+import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_tile/character_name_photo_widget.dart';
 import 'package:desafio_objective/src/entities/character.dart';
 import 'package:desafio_objective/src/entities/generic/marvel_api_request_data.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +23,7 @@ void main() {
       character = request.results.first;
 
       widget = Material(
-        child: CharacterProfileWidget(
+        child: CharacterNameAndPhotoWidget(
           character: character,
         ),
       );

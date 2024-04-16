@@ -1,5 +1,5 @@
 import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_tile/landscape_tile_widgets/character_list_tile_event_list.dart';
-import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_tile/character_profile_widget.dart';
+import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_tile/character_name_photo_widget.dart';
 import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_tile/landscape_tile_widgets/character_list_tile_series_list.dart';
 import 'package:desafio_objective/src/entities/character.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +22,7 @@ class CharacterListTileLandscapeWidget extends StatelessWidget {
               key: const Key("flex_profile"),
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: CharacterProfileWidget(character: character),
+                child: CharacterNameAndPhotoWidget(character: character),
               ),
             ),
             Expanded(
