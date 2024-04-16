@@ -12,7 +12,10 @@ class CharacterListTileWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final breakpoint = ResponsiveBreakpoints.of(context).breakpoint;
     if (breakpoint.name == MOBILE) {
-      return CharacterProfileWidget(character: character);
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: CharacterProfileWidget(character: character),
+      );
     } else {
       return CharacterListTileLandscapeWidget(character: character);
     }
