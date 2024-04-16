@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:desafio_objective/src/character_list/bloc/character_list_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -1,10 +1,9 @@
 import 'dart:convert';
 
-import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_tile/character_name_widget.dart';
+import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_tile/character_profile_widget.dart';
 import 'package:desafio_objective/src/entities/character.dart';
 import 'package:desafio_objective/src/entities/generic/marvel_api_request_data.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:network_image_mock/network_image_mock.dart';
 

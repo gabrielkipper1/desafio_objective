@@ -1,6 +1,5 @@
 import 'package:desafio_objective/src/entities/character.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 
 class CharacterProfileWidget extends StatelessWidget {
   final Character character;
