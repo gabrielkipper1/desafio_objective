@@ -1,15 +1,13 @@
 import 'package:desafio_objective/src/character_list/bloc/character_list_bloc.dart';
+import 'package:desafio_objective/src/character_list/widgets/app_bar/app_bar_builder.dart';
 import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_builder.dart';
 import 'package:desafio_objective/src/character_list/widgets/character_list_paginator.dart';
 import 'package:desafio_objective/src/character_list/widgets/character_list_search_bar.dart';
-import 'package:desafio_objective/src/interceptors/dio/marvel_auth_interceptor_dio.dart';
 import 'package:desafio_objective/src/repositories/character_repository/character_repository.dart';
-import 'package:desafio_objective/src/repositories/character_repository/marvel_character_service.dart';
-import 'package:desafio_objective/src/repositories/http_client/dio_http.dart';
-import 'package:desafio_objective/src/repositories/http_client/http_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class CharacterListPage extends StatefulWidget {
   const CharacterListPage({super.key});
@@ -33,20 +31,33 @@ class _CharacterListPageState extends State<CharacterListPage> {
       value: _bloc,
       child: BlocListener<CharacterListBloc, CharacterListState>(
         listener: (context, state) {},
-        child: Scaffold(
-          resizeToAvoidBottomInset: true,
-          appBar: AppBar(title: const Text("Character List")),
-          body: const Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CharacterListSearchBar(),
-              Expanded(child: CharacterListBuilder()),
-              CharacterListPaginator(),
-            ],
+        child: SafeArea(
+          child: Scaffold(
+            body: Padding(
+              padding: getPadding(),
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AppBarBuilder(),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 6.0),
+                    child: CharacterListSearchBar(),
+                  ),
+                  Expanded(
+                    child: CharacterListBuilder(),
+                  ),
+                  CharacterListPaginator(),
+                ],
+              ),
+            ),
           ),
         ),
       ),
     );
   }
+
+  EdgeInsets getPadding() => ResponsiveBreakpoints.of(context).breakpoint.name == MOBILE
+      ? const EdgeInsets.only(bottom: 10, left: 20, right: 20, top: 10)
+      : const EdgeInsets.only(left: 40.0, right: 40.0, bottom: 15.0, top: 20.0);
 }
