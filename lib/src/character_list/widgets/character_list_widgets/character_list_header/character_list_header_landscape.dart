@@ -11,15 +11,62 @@ class CharacterListHeaderLandscape extends StatelessWidget {
         children: [
           Expanded(
             flex: 1,
-            child: Container(height: 30, color: Colors.red, key: const Key("list_header_name"), child: const Text("Nome")),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5.0),
+              child: Container(
+                  height: 30,
+                  color: Theme.of(context).primaryColor,
+                  key: const Key("list_header_name"),
+                  child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text("Personagem",
+                            style: TextStyle(color: Theme.of(context).colorScheme.background, fontWeight: FontWeight.w600)),
+                      ))),
+            ),
           ),
           Expanded(
             flex: 1,
-            child: Container(height: 30, color: Colors.red, key: const Key("list_header_serie"), child: const Text("serie")),
+            child: Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Container(
+                height: 30,
+                color: Theme.of(context).primaryColor,
+                key: const Key("list_header_serie"),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Text(
+                      "Séries",
+                      style: TextStyle(color: Theme.of(context).colorScheme.background, fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ),
           Expanded(
             flex: 2,
-            child: Container(height: 30, color: Colors.red, key: const Key("list_header_event"), child: const Text("event")),
+            child: Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Container(
+                height: 30,
+                color: Theme.of(context).colorScheme.primary,
+                key: const Key("list_header_event"),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Text(
+                      "Eventos",
+                      style: TextStyle(color: Theme.of(context).colorScheme.background, fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ),
         ],
       ),
