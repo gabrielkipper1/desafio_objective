@@ -13,7 +13,6 @@ class CharacterProfileWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0),
         child: ListTile(
-          onTap: () => Modular.to.pushNamed("/character_detail", arguments: character),
           title: Text(
             character.name,
             key: const Key("character_name"),
