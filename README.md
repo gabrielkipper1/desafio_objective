@@ -1,9 +1,11 @@
 <img src="./medias/app_gif.gif" height="500">
 <img src="./medias/responsive.gif" height="500">
 
-## Instalação
+## Configuração
 
 É necessário inserir as chaves da API da Marvel, elas não foram enviadas ao reposistório. Para fazer isso, utilize o arquivo "APICredentials.dart" localizado em na pasta src/providers; 
+Deixar chaves privadas dentro do app nao é uma boa prática, o ideal seria implementar um servidor intermediário para guardar o segredo e evitar trafegar dados sensíveis.
+
 
 ## Testes
 Foram implementados testes unitários, testes de widgets e testes de integração:
