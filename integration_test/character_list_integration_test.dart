@@ -1,25 +1,27 @@
+import 'package:desafio_objective/src/app_module.dart';
 import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_tile/character_list_tile_widget.dart';
 import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/chracter_list_states/character_list_empty_widget.dart';
 import 'package:desafio_objective/src/material_app_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:number_paginator/number_paginator.dart';
 
 void main() {
   group("Integration test - search", () {
     testWidgets("Should be able to search for spider man", (tester) async {
-      await tester.pumpWidget(const MaterialAppWidget());
+      await tester.pumpWidget(ModularApp(module: AppModule(), child: const MaterialAppWidget()));
       await tester.pumpAndSettle();
 
-      final searchBar = find.byType(SearchBar);
+      final searchBar = find.byType(TextFormField);
       expect(searchBar, findsOneWidget);
 
       await tester.enterText(searchBar, "Spider");
       await tester.testTextInput.receiveAction(TextInputAction.done);
       await tester.pumpAndSettle();
 
-      expect(tester.widget<SearchBar>(searchBar).controller, isNotNull);
-      expect(tester.widget<SearchBar>(searchBar).controller!.text, "Spider");
+      expect(tester.widget<TextFormField>(searchBar).controller, isNotNull);
+      expect(tester.widget<TextFormField>(searchBar).controller!.text, "Spider");
 
       //wait for http
       await tester.pumpAndSettle(const Duration(seconds: 2));
@@ -33,18 +35,18 @@ void main() {
     });
 
     testWidgets("should get empty list when searching for a character the does not exist", (tester) async {
-      await tester.pumpWidget(const MaterialAppWidget());
+      await tester.pumpWidget(ModularApp(module: AppModule(), child: const MaterialAppWidget()));
       await tester.pumpAndSettle();
 
-      final searchBar = find.byType(SearchBar);
+      final searchBar = find.byType(TextFormField);
       expect(searchBar, findsOneWidget);
 
       await tester.enterText(searchBar, "character that does not exist");
       await tester.testTextInput.receiveAction(TextInputAction.done);
       await tester.pumpAndSettle();
 
-      expect(tester.widget<SearchBar>(searchBar).controller, isNotNull);
-      expect(tester.widget<SearchBar>(searchBar).controller!.text, "character that does not exist");
+      expect(tester.widget<TextFormField>(searchBar).controller, isNotNull);
+      expect(tester.widget<TextFormField>(searchBar).controller!.text, "character that does not exist");
 
       //wait for http
       await tester.pumpAndSettle(const Duration(seconds: 2));
@@ -54,18 +56,18 @@ void main() {
     });
 
     testWidgets("should search for spider man, then go to the next page and get different results", (tester) async {
-      await tester.pumpWidget(const MaterialAppWidget());
+      await tester.pumpWidget(ModularApp(module: AppModule(), child: const MaterialAppWidget()));
       await tester.pumpAndSettle();
 
-      final searchBar = find.byType(SearchBar);
+      final searchBar = find.byType(TextFormField);
       expect(searchBar, findsOneWidget);
 
       await tester.enterText(searchBar, "Spider");
       await tester.testTextInput.receiveAction(TextInputAction.done);
       await tester.pumpAndSettle();
 
-      expect(tester.widget<SearchBar>(searchBar).controller, isNotNull);
-      expect(tester.widget<SearchBar>(searchBar).controller!.text, "Spider");
+      expect(tester.widget<TextFormField>(searchBar).controller, isNotNull);
+      expect(tester.widget<TextFormField>(searchBar).controller!.text, "Spider");
 
       //wait for http
       await tester.pumpAndSettle(const Duration(seconds: 2));
