@@ -1,5 +1,5 @@
 import 'package:desafio_objective/src/app_module.dart';
-import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_tile/character_list_tile_widget.dart';
+import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_tile/character_list_tile_builder.dart';
 import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/chracter_list_states/character_list_empty_widget.dart';
 import 'package:desafio_objective/src/material_app_widget.dart';
 import 'package:flutter/material.dart';
@@ -79,7 +79,7 @@ void main() {
       // list header + 4 characters in the list = 5 children
       expect(list.children.length, 5);
 
-      final characterListTile = find.byType(CharacterListTileWidget);
+      final characterListTile = find.byType(CharacterListTileBuilder);
       expect(characterListTile, findsNWidgets(4));
 
       final paginator = find.byType(NumberPaginator);
@@ -93,7 +93,7 @@ void main() {
       //wait for http
       await tester.pumpAndSettle(const Duration(seconds: 2));
 
-      final characterListTile2 = find.byType(CharacterListTileWidget);
+      final characterListTile2 = find.byType(CharacterListTileBuilder);
       expect(characterListTile2, findsNWidgets(4));
       expect(characterListTile, isNot(characterListTile2));
     });

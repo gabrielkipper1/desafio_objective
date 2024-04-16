@@ -4,9 +4,9 @@ import 'package:desafio_objective/src/entities/character.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-class CharacterListTileWidget extends StatelessWidget {
+class CharacterListTileBuilder extends StatelessWidget {
   final Character character;
-  const CharacterListTileWidget({super.key, required this.character});
+  const CharacterListTileBuilder({super.key, required this.character});
 
   @override
   Widget build(BuildContext context) {

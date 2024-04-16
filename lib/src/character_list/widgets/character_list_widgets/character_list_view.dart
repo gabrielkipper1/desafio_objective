@@ -1,5 +1,5 @@
 import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_header/character_list_header_widget.dart';
-import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_tile/character_list_tile_widget.dart';
+import 'package:desafio_objective/src/character_list/widgets/character_list_widgets/character_list_tile/character_list_tile_builder.dart';
 import 'package:desafio_objective/src/entities/character.dart';
 import 'package:desafio_objective/src/entities/generic/marvel_api_request_data.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +28,7 @@ class _CharacterListViewState extends State<CharacterListView> {
                 child: InkWell(
                   onTap: () => Modular.to.pushNamed("/character_detail", arguments: character),
                   radius: 20,
-                  child: CharacterListTileWidget(
+                  child: CharacterListTileBuilder(
                     character: character,
                   ),
                 ),
