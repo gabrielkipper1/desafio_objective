@@ -1,5 +1,5 @@
-<img src="./medias/app_gif.gif" height="400">
-<img src="./medias/responsive.gif" height="400">
+<img src="./medias/app_gif.gif" height="500">
+<img src="./medias/responsive.gif" height="500">
 
 ## Instalação
 
