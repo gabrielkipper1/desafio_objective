@@ -5,7 +5,7 @@ class CharacterListEmptyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Directionality(
+    return Directionality(
       textDirection: TextDirection.ltr,
       child: Center(
         child: Column(
@@ -15,9 +15,9 @@ class CharacterListEmptyWidget extends StatelessWidget {
             Icon(
               Icons.error,
               size: 50,
-              color: Colors.red,
+              color: Theme.of(context).primaryColor,
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
                 key: Key("empty_message"),

@@ -10,10 +10,10 @@ class CharacterListErrorWidget extends StatelessWidget {
       textDirection: TextDirection.ltr,
       child: Column(
         children: [
-          const Icon(
+          Icon(
             Icons.error,
             size: 50,
-            color: Colors.red,
+            color: Theme.of(context).primaryColor,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
